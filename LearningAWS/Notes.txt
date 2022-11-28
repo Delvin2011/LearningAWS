@@ -57,7 +57,7 @@ Build & publish project project into app directory
 7. Go & search for CodeDeploy (Automate Code deployments) on AWS Console
 - we want to create a new function
 - Create new application -> deployment group -> service role (that grants CodeDeploy to our target instances) -> IAM -> Create role for CodeDeploy
--> 
+-> Create Deployment -> Connect to github
 
 
 
