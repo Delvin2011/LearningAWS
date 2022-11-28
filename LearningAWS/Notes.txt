@@ -1,0 +1,63 @@
+Description
+ - Dot Net deploy to AWS using AWS EC
+ - Use AWS Codeploy & GitHub for setting up our AWS EC instance (Linux VM)
+ - YML file creation
+
+1. Create a Web API
+2. Create a Git repo
+    - git --version
+	- git init
+	- git status
+	- git add .
+	- git commit -m "xxxxxxxx"
+	- git remote add origin https://github.com/Delvin2011/LearningAWS.git
+    - git pull origin main --allow-unrelated-histories
+	- git remote rm origin (how to remove existing git remote)
+
+3. Create AWS Account
+4. Console Home -> Build a Solution -> Launch a VM with EC
+    - Leave everything as default
+    - Search for IAM -> Create new IAM profile -> Create Role -> AWS Service -> EC2 -> Next -> Add Permissions -> Search Codedeploy -> AmazonEC2RoleforAWSCodeDeployLimited.
+    - Network Settings -> Create Security Group
+    - Launch the instance
+    - Connect the instance -> 
+5. Connect to your Linux instance from Windows using OpenSSH & Install
+    - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/openssh.html
+
+sudo yum update
+sudo yum install ruby
+sudo yum install wget
+********** https://learn.microsoft.com/en-us/dotnet/core/install/linux-centos*****
+sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+sudo yum install aspnetcore-runtime-6.0
+
+Check dotnet info
+    - dotnet --info
+    Key pair - learnawsdemo
+Connect to instance - ssh -i "D:\Learning\AWS\API\SSH\learnawsdemo.pem" ec2-user@ec2-52-204-198-106.compute-1.amazonaws.com
+
+Installing Codedeploy agent - https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-linux.html
+sudo wget https://aws-codedeploy-us-east-2.s3.us-east-2.amazonaws.com/latest/install
+
+Change mode and install the agent
+ - sudo chmod +x ./install
+ - sudo ./install auto
+ - sudo service codedeploy-agent status - check if codedeploy is running.
+
+ 6. Create a yml file to tell Codedeploy how to install our .Net application.
+ - This YAML file tells CodeDeploy which scripts to run at various phases of the lifecycle of a CodeDeploy deployment. - https://www.bluelabellabs.com/blog/part-ii-setting-up-aws-codedeploy-codepipeline-to-automate-the-deployment-of-a-node-web-service/
+ - files - let Codedeploy know where to copy files from and to on the EC2 instance.
+ - hooks - lifecycle hooks called by Codedeploy. Configure scripts to be run under the hooks.
+ - webapi.service - 
+
+Build & publish project project into app directory
+ dotnet publish -o ../app
+- LearningAWS.dll goint to be run on the remote EC2 remote instance
+- 
+7. Go & search for CodeDeploy (Automate Code deployments) on AWS Console
+- we want to create a new function
+- Create new application -> deployment group -> service role (that grants CodeDeploy to our target instances) -> IAM -> Create role for CodeDeploy
+-> 
+
+
+

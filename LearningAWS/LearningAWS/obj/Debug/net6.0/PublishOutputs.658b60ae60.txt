@@ -1,0 +1,11 @@
+D:\Learning\AWS\API\app\LearningAWS.exe
+D:\Learning\AWS\API\app\appsettings.Development.json
+D:\Learning\AWS\API\app\appsettings.json
+D:\Learning\AWS\API\app\LearningAWS.dll
+D:\Learning\AWS\API\app\LearningAWS.deps.json
+D:\Learning\AWS\API\app\LearningAWS.runtimeconfig.json
+D:\Learning\AWS\API\app\LearningAWS.pdb
+D:\Learning\AWS\API\app\Microsoft.OpenApi.dll
+D:\Learning\AWS\API\app\Swashbuckle.AspNetCore.Swagger.dll
+D:\Learning\AWS\API\app\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Learning\AWS\API\app\Swashbuckle.AspNetCore.SwaggerUI.dll
